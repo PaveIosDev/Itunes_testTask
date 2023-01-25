@@ -29,6 +29,39 @@ class ViewController: UIViewController {
         return label
     }()
     
+    private let loginTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Enter email"
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    private let passwordTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Enter password"
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    private let signInButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .black
+        button.setTitle("SignIN", for: .normal)
+        button.layer.cornerRadius = 10
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let signUpButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .purple
+        button.setTitle("SignUP", for: .normal)
+        button.layer.cornerRadius = 10
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +74,10 @@ class ViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(backgroundView)
         scrollView.addSubview(loginLabel)
+        scrollView.addSubview(loginTextField)
+        scrollView.addSubview(passwordTextField)
+        scrollView.addSubview(signInButton)
+        scrollView.addSubview(signUpButton)
     }
     
     
@@ -63,8 +100,27 @@ extension ViewController {
             backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             
             loginLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 350),
-            loginLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            loginLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
+            loginTextField.topAnchor.constraint(equalTo: loginLabel.bottomAnchor, constant: 30),
+            loginTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            loginTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+            loginTextField.heightAnchor.constraint(equalToConstant: 40),
+            
+            passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 10),
+            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 40),
+            
+            signInButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 30),
+            signInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            signInButton.widthAnchor.constraint(equalToConstant: 175),
+            signInButton.heightAnchor.constraint(equalToConstant: 40),
+            
+            signUpButton.centerYAnchor.constraint(equalTo: signInButton.centerYAnchor),
+            signUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+            signUpButton.widthAnchor.constraint(equalToConstant: 175),
+            signUpButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
 }
