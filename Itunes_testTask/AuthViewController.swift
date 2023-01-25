@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AuthViewController: UIViewController {
 
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -59,9 +59,15 @@ class ViewController: UIViewController {
         button.backgroundColor = .purple
         button.setTitle("SignUP", for: .normal)
         button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    @objc private func signUpButtonTapped() {
+        let signUpViewController = SignUpViewController()
+        self.present(signUpViewController, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +91,7 @@ class ViewController: UIViewController {
 
 //MARK: - setConstraints
 
-extension ViewController {
+extension AuthViewController {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
