@@ -49,6 +49,7 @@ class AuthViewController: UIViewController {
         button.backgroundColor = .black
         button.setTitle("SignIN", for: .normal)
         button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -66,6 +67,12 @@ class AuthViewController: UIViewController {
     @objc private func signUpButtonTapped() {
         let signUpViewController = SignUpViewController()
         self.present(signUpViewController, animated: true)
+    }
+    
+    @objc private func signInButtonTapped() {
+        let signInViewController = SignInViewController()
+//        signInViewController.modalPresentationStyle = .fullScreen
+        self.present(signInViewController, animated: true)
     }
     
     private var textFieldsStackView = UIStackView()
@@ -102,7 +109,6 @@ class AuthViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
-    
 }
 
 //MARK: - UITextFieldDelegate
