@@ -76,6 +76,7 @@ class AuthViewController: UIViewController {
         
         setupViews()
         setConstraints()
+        setDelegates()
     }
 
     private func setupViews() {
@@ -85,7 +86,7 @@ class AuthViewController: UIViewController {
                                           spacing: 10,
                                           distribution: .fillProportionally)
         
-        buttonsStackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField],
+        buttonsStackView = UIStackView(arrangedSubviews: [signInButton, signUpButton],
                                           axis: .horizontal,
                                           spacing: 10,
                                           distribution: .fillProportionally)
@@ -95,10 +96,23 @@ class AuthViewController: UIViewController {
         backgroundView.addSubview(loginLabel)
         backgroundView.addSubview(textFieldsStackView)
         backgroundView.addSubview(buttonsStackView)
-
     }
     
+    private func setDelegates() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+    }
     
+}
+
+//MARK: - UITextFieldDelegate
+
+extension AuthViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        return true
+    }
 }
 
 //MARK: - setConstraints
@@ -112,33 +126,25 @@ extension AuthViewController {
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
         
-            backgroundView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            backgroundView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            backgroundView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
+            backgroundView.heightAnchor.constraint(equalTo: view.heightAnchor),
+            backgroundView.widthAnchor.constraint(equalTo: view.widthAnchor),
             
-            loginLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 350),
-            loginLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            textFieldsStackView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
+            textFieldsStackView.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor),
+            textFieldsStackView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20),
+            textFieldsStackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20),
             
-            emailTextField.topAnchor.constraint(equalTo: loginLabel.bottomAnchor, constant: 30),
-            emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-            emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
-            emailTextField.heightAnchor.constraint(equalToConstant: 40),
+            loginLabel.bottomAnchor.constraint(equalTo: textFieldsStackView.topAnchor, constant: -30),
+            loginLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
             
-            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 10),
-            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 40),
-            
-            signInButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 30),
-            signInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-            signInButton.widthAnchor.constraint(equalToConstant: 175),
             signInButton.heightAnchor.constraint(equalToConstant: 40),
+            signUpButton.heightAnchor.constraint(equalToConstant: 40),
             
-            signUpButton.centerYAnchor.constraint(equalTo: signInButton.centerYAnchor),
-            signUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
-            signUpButton.widthAnchor.constraint(equalToConstant: 175),
-            signUpButton.heightAnchor.constraint(equalToConstant: 40)
+            buttonsStackView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20),
+            buttonsStackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20),
+            buttonsStackView.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor, constant: 30)
         ])
     }
 }

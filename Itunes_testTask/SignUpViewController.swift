@@ -61,15 +61,7 @@ class SignUpViewController: UIPageViewController {
         return label
     }()
     
-    private let datePickerTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Date"
-        textField.borderStyle = .roundedRect
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
-    }()
-    
-    private let datePickerValidLabel: UILabel = {
+    private let ageValidLabel: UILabel = {
         let label = UILabel()
         label.text = "Required field"
         label.font = UIFont.systemFont(ofSize: 14)
@@ -125,6 +117,9 @@ class SignUpViewController: UIPageViewController {
         return label
     }()
     
+    private var elementsStackView = UIStackView()
+    private let datePicker = UIDatePicker()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -132,16 +127,65 @@ class SignUpViewController: UIPageViewController {
         
         setupViews()
         setConstraints()
+        setDelegates()
+        setupDatePicker()
     }
     
     private func setupViews() {
         view.addSubview(scrollView)
         scrollView.addSubview(backgroundView)
+        
+        elementsStackView = UIStackView(arrangedSubviews: [firstNameTextField,
+                                                          firstNameValidLabel,
+                                                          secondNameTextField,
+                                                          secondNameValidLabel,
+                                                          datePicker,
+                                                          ageValidLabel,
+                                                          phoneTextField,
+                                                          phoneValidLabel,
+                                                          emailTextField,
+                                                          emailValidLabel,
+                                                          passwordTextField,
+                                                          passwordValidLabel],
+                                        axis: .vertical,
+                                        spacing: 10,
+                                        distribution: .fillProportionally)
+        
         scrollView.addSubview(regLabel)
-        scrollView.addSubview(firstNameTextField)
-        scrollView.addSubview(firstNameValidLabel)
+        scrollView.addSubview(elementsStackView)
     }
     
+    private func setDelegates() {
+        firstNameTextField.delegate = self
+        secondNameTextField.delegate = self
+        phoneTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
+    private func setupDatePicker() {
+        datePicker.datePickerMode = .date
+        datePicker.backgroundColor = .white
+        datePicker.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        datePicker.layer.borderWidth = 1
+        datePicker.clipsToBounds = true
+        datePicker.layer.cornerRadius = 6
+        datePicker.tintColor = .black
+    }
+    
+}
+
+//MARK: - UITextFieldDelegate
+
+extension SignUpViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        firstNameTextField.resignFirstResponder()
+        secondNameTextField.resignFirstResponder()
+        phoneTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        return true
+    }
 }
 
 //MARK: - setConstraints
@@ -163,13 +207,6 @@ extension SignUpViewController {
             regLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
             regLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            firstNameTextField.topAnchor.constraint(equalTo: regLabel.bottomAnchor, constant: 30),
-            firstNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-            firstNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
-            firstNameTextField.heightAnchor.constraint(equalToConstant: 40),
-            
-            firstNameValidLabel.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: 10),
-            firstNameValidLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12)
         ])
     }
 }
