@@ -9,18 +9,18 @@ import UIKit
 
 class SignUpViewController: UIPageViewController {
 
-//    private let scrollView: UIScrollView = {
-//        let scrollView = UIScrollView()
-//        scrollView.translatesAutoresizingMaskIntoConstraints = false
-//        return scrollView
-//    }()
-//
-//    private let backgroundView: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = .white
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        return view
-//    }()
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+
+    private let backgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     private let regLabel: UILabel = {
         let label = UILabel()
@@ -56,9 +56,11 @@ class SignUpViewController: UIPageViewController {
     }
     
     private func setupViews() {
-        view.addSubview(regLabel)
-        view.addSubview(firstNameTextField)
-        view.addSubview(firstNameValidLabel)
+        view.addSubview(scrollView)
+        scrollView.addSubview(backgroundView)
+        scrollView.addSubview(regLabel)
+        scrollView.addSubview(firstNameTextField)
+        scrollView.addSubview(firstNameValidLabel)
     }
     
 }
@@ -69,6 +71,16 @@ extension SignUpViewController {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+        
+            backgroundView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            
             regLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
             regLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
