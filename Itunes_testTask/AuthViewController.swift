@@ -29,11 +29,10 @@ class AuthViewController: UIViewController {
         return label
     }()
     
-    private let loginTextField: UITextField = {
+    private let emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Enter email"
         textField.borderStyle = .roundedRect
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
@@ -41,7 +40,7 @@ class AuthViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "Enter password"
         textField.borderStyle = .roundedRect
-        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -69,6 +68,9 @@ class AuthViewController: UIViewController {
         self.present(signUpViewController, animated: true)
     }
     
+    private var textFieldsStackView = UIStackView()
+    private var buttonsStackView = UIStackView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,13 +79,23 @@ class AuthViewController: UIViewController {
     }
 
     private func setupViews() {
+        
+        textFieldsStackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField],
+                                          axis: .vertical,
+                                          spacing: 10,
+                                          distribution: .fillProportionally)
+        
+        buttonsStackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField],
+                                          axis: .horizontal,
+                                          spacing: 10,
+                                          distribution: .fillProportionally)
+        
         view.addSubview(scrollView)
         scrollView.addSubview(backgroundView)
-        scrollView.addSubview(loginLabel)
-        scrollView.addSubview(loginTextField)
-        scrollView.addSubview(passwordTextField)
-        scrollView.addSubview(signInButton)
-        scrollView.addSubview(signUpButton)
+        backgroundView.addSubview(loginLabel)
+        backgroundView.addSubview(textFieldsStackView)
+        backgroundView.addSubview(buttonsStackView)
+
     }
     
     
@@ -108,12 +120,12 @@ extension AuthViewController {
             loginLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 350),
             loginLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            loginTextField.topAnchor.constraint(equalTo: loginLabel.bottomAnchor, constant: 30),
-            loginTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-            loginTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
-            loginTextField.heightAnchor.constraint(equalToConstant: 40),
+            emailTextField.topAnchor.constraint(equalTo: loginLabel.bottomAnchor, constant: 30),
+            emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+            emailTextField.heightAnchor.constraint(equalToConstant: 40),
             
-            passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 10),
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 10),
             passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
             passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
             passwordTextField.heightAnchor.constraint(equalToConstant: 40),

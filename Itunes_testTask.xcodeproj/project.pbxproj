@@ -13,6 +13,7 @@
 		C425982829818C6F00AB1C1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C425982729818C6F00AB1C1A /* Assets.xcassets */; };
 		C425982B29818C6F00AB1C1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C425982929818C6F00AB1C1A /* LaunchScreen.storyboard */; };
 		C42598332981A3AB00AB1C1A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42598322981A3AB00AB1C1A /* SignUpViewController.swift */; };
+		C425983729841D9200AB1C1A /* UIStackView + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C425983629841D9200AB1C1A /* UIStackView + Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C425982A29818C6F00AB1C1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C425982C29818C6F00AB1C1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C42598322981A3AB00AB1C1A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		C425983629841D9200AB1C1A /* UIStackView + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extentions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +62,28 @@
 				C425982029818C6C00AB1C1A /* SceneDelegate.swift */,
 				C425982229818C6C00AB1C1A /* AuthViewController.swift */,
 				C42598322981A3AB00AB1C1A /* SignUpViewController.swift */,
+				C425983429841D4900AB1C1A /* Extentions */,
 				C425982729818C6F00AB1C1A /* Assets.xcassets */,
 				C425982929818C6F00AB1C1A /* LaunchScreen.storyboard */,
 				C425982C29818C6F00AB1C1A /* Info.plist */,
 			);
 			path = Itunes_testTask;
+			sourceTree = "<group>";
+		};
+		C425983429841D4900AB1C1A /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				C425983529841D6200AB1C1A /* UIKit */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		C425983529841D6200AB1C1A /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				C425983629841D9200AB1C1A /* UIStackView + Extentions.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C425982329818C6C00AB1C1A /* AuthViewController.swift in Sources */,
+				C425983729841D9200AB1C1A /* UIStackView + Extentions.swift in Sources */,
 				C425981F29818C6C00AB1C1A /* AppDelegate.swift in Sources */,
 				C42598332981A3AB00AB1C1A /* SignUpViewController.swift in Sources */,
 				C425982129818C6C00AB1C1A /* SceneDelegate.swift in Sources */,

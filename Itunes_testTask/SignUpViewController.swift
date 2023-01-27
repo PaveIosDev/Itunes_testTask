@@ -45,6 +45,85 @@ class SignUpViewController: UIPageViewController {
         return label
     }()
     
+    private let secondNameTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Second name"
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    private let secondNameValidLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Required field"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let datePickerTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Date"
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    private let datePickerValidLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Required field"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let phoneTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Phone"
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    private let phoneValidLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Required field"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let emailTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "E-mail"
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    private let emailValidLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Required field"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let passwordTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Password"
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    private let passwordValidLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Required field"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
