@@ -117,6 +117,17 @@ class SignUpViewController: UIPageViewController {
         return label
     }()
     
+    private let signUpButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .black
+        button.setTitle("Sign UP", for: .normal)
+        button.layer.cornerRadius = 10
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     private var elementsStackView = UIStackView()
     private let datePicker = UIDatePicker()
     
@@ -151,8 +162,9 @@ class SignUpViewController: UIPageViewController {
                                         spacing: 10,
                                         distribution: .fillProportionally)
         
-        scrollView.addSubview(regLabel)
-        scrollView.addSubview(elementsStackView)
+        backgroundView.addSubview(regLabel)
+        backgroundView.addSubview(elementsStackView)
+        backgroundView.addSubview(signUpButton)
     }
     
     private func setDelegates() {
@@ -166,11 +178,15 @@ class SignUpViewController: UIPageViewController {
     private func setupDatePicker() {
         datePicker.datePickerMode = .date
         datePicker.backgroundColor = .white
-        datePicker.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        datePicker.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         datePicker.layer.borderWidth = 1
         datePicker.clipsToBounds = true
         datePicker.layer.cornerRadius = 6
         datePicker.tintColor = .black
+    }
+    
+    @objc private func signUpButtonTapped() {
+        print("signUpButtonTapped")
     }
     
 }
@@ -181,7 +197,6 @@ extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         firstNameTextField.resignFirstResponder()
         secondNameTextField.resignFirstResponder()
-        phoneTextField.resignFirstResponder()
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         return true
@@ -204,8 +219,18 @@ extension SignUpViewController {
             backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             
-            regLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+            elementsStackView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
+            elementsStackView.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor),
+            elementsStackView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20),
+            elementsStackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20),
+            
+            regLabel.bottomAnchor.constraint(equalTo: elementsStackView.topAnchor, constant: -30),
             regLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            signUpButton.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
+            signUpButton.topAnchor.constraint(equalTo: elementsStackView.bottomAnchor, constant: 30),
+            signUpButton.heightAnchor.constraint(equalToConstant: 40),
+            signUpButton.widthAnchor.constraint(equalToConstant: 300)
             
         ])
     }
