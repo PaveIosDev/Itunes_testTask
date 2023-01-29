@@ -1,5 +1,5 @@
 //
-//  TableViewCell.swift
+//  AlbumsTableViewCell.swift
 //  Itunes_testTask
 //
 //  Created by Павел Яковенко on 27.01.2023.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class AlbumsTableViewCell: UITableViewCell {
     
     private let albumImageViewe: UIImageView = {
         let imageView = UIImageView()

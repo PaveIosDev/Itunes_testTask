@@ -15,7 +15,7 @@
 		C42598332981A3AB00AB1C1A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42598322981A3AB00AB1C1A /* SignUpViewController.swift */; };
 		C425983729841D9200AB1C1A /* UIStackView + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C425983629841D9200AB1C1A /* UIStackView + Extentions.swift */; };
 		C42598392984396200AB1C1A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42598382984396200AB1C1A /* SignInViewController.swift */; };
-		C425983C2984412A00AB1C1A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C425983B2984412A00AB1C1A /* TableViewCell.swift */; };
+		C425983C2984412A00AB1C1A /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C425983B2984412A00AB1C1A /* AlbumsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		C42598322981A3AB00AB1C1A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C425983629841D9200AB1C1A /* UIStackView + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extentions.swift"; sourceTree = "<group>"; };
 		C42598382984396200AB1C1A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		C425983B2984412A00AB1C1A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		C425983B2984412A00AB1C1A /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,7 @@
 		C425983A2984411200AB1C1A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				C425983B2984412A00AB1C1A /* TableViewCell.swift */,
+				C425983B2984412A00AB1C1A /* AlbumsTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -175,7 +175,7 @@
 				C42598392984396200AB1C1A /* SignInViewController.swift in Sources */,
 				C425981F29818C6C00AB1C1A /* AppDelegate.swift in Sources */,
 				C42598332981A3AB00AB1C1A /* SignUpViewController.swift in Sources */,
-				C425983C2984412A00AB1C1A /* TableViewCell.swift in Sources */,
+				C425983C2984412A00AB1C1A /* AlbumsTableViewCell.swift in Sources */,
 				C425982129818C6C00AB1C1A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
