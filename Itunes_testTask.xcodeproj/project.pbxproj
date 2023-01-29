@@ -14,8 +14,11 @@
 		C425982B29818C6F00AB1C1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C425982929818C6F00AB1C1A /* LaunchScreen.storyboard */; };
 		C42598332981A3AB00AB1C1A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42598322981A3AB00AB1C1A /* SignUpViewController.swift */; };
 		C425983729841D9200AB1C1A /* UIStackView + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C425983629841D9200AB1C1A /* UIStackView + Extentions.swift */; };
-		C42598392984396200AB1C1A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42598382984396200AB1C1A /* SignInViewController.swift */; };
+		C42598392984396200AB1C1A /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42598382984396200AB1C1A /* AlbumsViewController.swift */; };
 		C425983C2984412A00AB1C1A /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C425983B2984412A00AB1C1A /* AlbumsTableViewCell.swift */; };
+		C425983F2986DFA000AB1C1A /* UIViewController + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C425983E2986DFA000AB1C1A /* UIViewController + Extention.swift */; };
+		C42598412986E31300AB1C1A /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42598402986E31300AB1C1A /* UserInfoViewController.swift */; };
+		C42598432986E64D00AB1C1A /* DetailAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42598422986E64D00AB1C1A /* DetailAlbumViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +31,11 @@
 		C425982C29818C6F00AB1C1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C42598322981A3AB00AB1C1A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C425983629841D9200AB1C1A /* UIStackView + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extentions.swift"; sourceTree = "<group>"; };
-		C42598382984396200AB1C1A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		C42598382984396200AB1C1A /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		C425983B2984412A00AB1C1A /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
+		C425983E2986DFA000AB1C1A /* UIViewController + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extention.swift"; sourceTree = "<group>"; };
+		C42598402986E31300AB1C1A /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		C42598422986E64D00AB1C1A /* DetailAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAlbumViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +68,9 @@
 		C425981D29818C6C00AB1C1A /* Itunes_testTask */ = {
 			isa = PBXGroup;
 			children = (
-				C425983A2984411200AB1C1A /* Cell */,
-				C425981E29818C6C00AB1C1A /* AppDelegate.swift */,
 				C425982029818C6C00AB1C1A /* SceneDelegate.swift */,
-				C425982229818C6C00AB1C1A /* AuthViewController.swift */,
-				C42598382984396200AB1C1A /* SignInViewController.swift */,
-				C42598322981A3AB00AB1C1A /* SignUpViewController.swift */,
+				C425981E29818C6C00AB1C1A /* AppDelegate.swift */,
+				C425983D2986D8FC00AB1C1A /* Controllers */,
 				C425983429841D4900AB1C1A /* Extentions */,
 				C425982729818C6F00AB1C1A /* Assets.xcassets */,
 				C425982929818C6F00AB1C1A /* LaunchScreen.storyboard */,
@@ -88,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				C425983629841D9200AB1C1A /* UIStackView + Extentions.swift */,
+				C425983E2986DFA000AB1C1A /* UIViewController + Extention.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -98,6 +102,19 @@
 				C425983B2984412A00AB1C1A /* AlbumsTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		C425983D2986D8FC00AB1C1A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C425983A2984411200AB1C1A /* Cell */,
+				C425982229818C6C00AB1C1A /* AuthViewController.swift */,
+				C42598322981A3AB00AB1C1A /* SignUpViewController.swift */,
+				C42598382984396200AB1C1A /* AlbumsViewController.swift */,
+				C42598422986E64D00AB1C1A /* DetailAlbumViewController.swift */,
+				C42598402986E31300AB1C1A /* UserInfoViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,11 +189,14 @@
 			files = (
 				C425982329818C6C00AB1C1A /* AuthViewController.swift in Sources */,
 				C425983729841D9200AB1C1A /* UIStackView + Extentions.swift in Sources */,
-				C42598392984396200AB1C1A /* SignInViewController.swift in Sources */,
+				C42598392984396200AB1C1A /* AlbumsViewController.swift in Sources */,
 				C425981F29818C6C00AB1C1A /* AppDelegate.swift in Sources */,
+				C42598412986E31300AB1C1A /* UserInfoViewController.swift in Sources */,
+				C42598432986E64D00AB1C1A /* DetailAlbumViewController.swift in Sources */,
 				C42598332981A3AB00AB1C1A /* SignUpViewController.swift in Sources */,
 				C425983C2984412A00AB1C1A /* AlbumsTableViewCell.swift in Sources */,
 				C425982129818C6C00AB1C1A /* SceneDelegate.swift in Sources */,
+				C425983F2986DFA000AB1C1A /* UIViewController + Extention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AuthViewController.swift
 //  Itunes_testTask
 //
 //  Created by Павел Яковенко on 25.01.2023.
@@ -70,9 +70,9 @@ class AuthViewController: UIViewController {
     }
     
     @objc private func signInButtonTapped() {
-        let signInViewController = SignInViewController()
-//        signInViewController.modalPresentationStyle = .fullScreen
-        self.present(signInViewController, animated: true)
+        let navVC = UINavigationController(rootViewController: AlbumsViewController())
+        navVC.modalPresentationStyle = .fullScreen
+        self.present(navVC, animated: true)
     }
     
     private var textFieldsStackView = UIStackView()

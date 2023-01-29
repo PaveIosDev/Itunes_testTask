@@ -1,5 +1,5 @@
 //
-//  RegistrationViewController.swift
+//  SignUpViewController.swift
 //  Itunes_testTask
 //
 //  Created by Павел Яковенко on 25.01.2023.
