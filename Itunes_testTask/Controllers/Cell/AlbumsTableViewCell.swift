@@ -35,7 +35,7 @@ class AlbumsTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let countTracksLabel: UILabel = {
+    private let trackCountLabel: UILabel = {
         let label = UILabel()
         label.text = "20 tracks"
         label.font = UIFont.systemFont(ofSize: 16)
@@ -69,7 +69,7 @@ class AlbumsTableViewCell: UITableViewCell {
         addSubview(albumLogo)
         addSubview(albumNameLabel)
 
-        stackView = UIStackView(arrangedSubviews: [artistNameLabel, countTracksLabel],
+        stackView = UIStackView(arrangedSubviews: [artistNameLabel, trackCountLabel],
                                 axis: .horizontal,
                                 spacing: 10,
                                 distribution: .equalCentering)
