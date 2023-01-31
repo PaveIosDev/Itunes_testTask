@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserInfoViewController: UIPageViewController {
+class UserInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
