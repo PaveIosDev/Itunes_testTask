@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpViewController: UIPageViewController {
+class SignUpViewController: UIViewController {
 
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
