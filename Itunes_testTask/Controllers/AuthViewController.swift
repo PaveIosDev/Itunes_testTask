@@ -86,6 +86,10 @@ class AuthViewController: UIViewController {
         setDelegates()
         registerKeybordNotification()
     }
+    
+    deinit {
+        removeKeybordNotification()
+    }
 
     private func setupViews() {
         
@@ -122,6 +126,8 @@ extension AuthViewController: UITextFieldDelegate {
     }
 }
 
+//MARK: - Keyboard Show Hide
+
 extension AuthViewController {
     
     private func registerKeybordNotification() {
@@ -134,6 +140,15 @@ extension AuthViewController {
                                                selector: #selector(keyboardWillHide),
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
+    }
+    
+    private func removeKeybordNotification(){
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillShowNotification,
+                                                  object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillHideNotification,
+                                                  object: nil)
     }
     
     @objc private func keyboardWillShow(notification: Notification) {

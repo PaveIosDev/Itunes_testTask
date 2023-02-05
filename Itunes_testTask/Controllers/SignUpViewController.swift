@@ -140,17 +140,20 @@ class SignUpViewController: UIViewController {
         setConstraints()
         setDelegates()
         setupDatePicker()
+        registerKeybordNotification()
+    }
+    
+    deinit {
+        removeKeybordNotification()
     }
     
     private func setupViews() {
-        view.addSubview(scrollView)
-        scrollView.addSubview(backgroundView)
         
         elementsStackView = UIStackView(arrangedSubviews: [firstNameTextField,
                                                           firstNameValidLabel,
                                                           secondNameTextField,
                                                           secondNameValidLabel,
-                                                          datePicker,
+//                                                          datePicker,
                                                           ageValidLabel,
                                                           phoneTextField,
                                                           phoneValidLabel,
@@ -162,6 +165,8 @@ class SignUpViewController: UIViewController {
                                         spacing: 10,
                                         distribution: .fillProportionally)
         
+        view.addSubview(scrollView)
+        scrollView.addSubview(backgroundView)
         backgroundView.addSubview(regLabel)
         backgroundView.addSubview(elementsStackView)
         backgroundView.addSubview(signUpButton)
@@ -189,17 +194,74 @@ class SignUpViewController: UIViewController {
         print("signUpButtonTapped")
     }
     
+    private func setTextField(textField: UITextField, label: UILabel, validMessege: String, wrongMessege: String, string: String, range: NSRange) {
+        
+        let text = (textField.text ?? "") + string
+        let result: String
+        
+        if range.length == 1 {
+            let end = text.index(text.startIndex, offsetBy: text.count - 1)
+            result = String(text[text.startIndex..<end])
+        } else {
+            result = text
+        }
+
+        textField.text = result
+    }
+    
 }
 
 //MARK: - UITextFieldDelegate
 
 extension SignUpViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        return false
+    }
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         firstNameTextField.resignFirstResponder()
         secondNameTextField.resignFirstResponder()
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         return true
+    }
+}
+
+//MARK: - Keyboard Show Hide
+
+extension SignUpViewController {
+    
+    private func registerKeybordNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
+    private func removeKeybordNotification(){
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillShowNotification,
+                                                  object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillHideNotification,
+                                                  object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        let userInfo = notification.userInfo
+        let keybordHeight = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        scrollView.contentOffset = CGPoint(x: 0, y: keybordHeight.height / 2)
+    }
+    
+    @objc private func keyboardWillHide() {
+        scrollView.contentOffset = CGPoint.zero
     }
 }
 
@@ -214,10 +276,10 @@ extension SignUpViewController {
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
         
-            backgroundView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            backgroundView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            backgroundView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
+            backgroundView.heightAnchor.constraint(equalTo: view.heightAnchor),
+            backgroundView.widthAnchor.constraint(equalTo: view.widthAnchor),
             
             elementsStackView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
             elementsStackView.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor),
