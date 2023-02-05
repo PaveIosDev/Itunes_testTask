@@ -84,6 +84,7 @@ class AuthViewController: UIViewController {
         setupViews()
         setConstraints()
         setDelegates()
+        registerKeybordNotification()
     }
 
     private func setupViews() {
@@ -118,6 +119,31 @@ extension AuthViewController: UITextFieldDelegate {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         return true
+    }
+}
+
+extension AuthViewController {
+    
+    private func registerKeybordNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        let userInfo = notification.userInfo
+        let keybordHeight = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        scrollView.contentOffset = CGPoint(x: 0, y: keybordHeight.height / 2)
+    }
+    
+    @objc private func keyboardWillHide() {
+        scrollView.contentOffset = CGPoint.zero
     }
 }
 
