@@ -133,6 +133,7 @@ class SignUpViewController: UIViewController {
     
     let nameValidType: String.ValidTypes = .name
     let emailValidType: String.ValidTypes = .email
+    let passwordValidType: String.ValidTypes = .password
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -219,6 +220,26 @@ class SignUpViewController: UIViewController {
             label.textColor = #colorLiteral(red: 0.9671349973, green: 0.08866649679, blue: 0.19185256, alpha: 1)
         }
     }
+
+    private func setPhoneNumberMask(textField: UITextField, mask: String, string: String, range: NSRange) -> String {
+        
+        let text = textField.text ?? ""
+        
+        let phone = (text as NSString).replacingCharacters(in: range, with: string)
+        let number = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        var result = ""
+        var index = number.startIndex
+        
+        for character in mask  where index < number.endIndex {
+            if character == "X" {
+                result.append(number[index])
+                index = number.index(after: index)
+            } else {
+                result.append(character)
+            }
+        }
+        return result
+    }
     
 }
 
@@ -249,6 +270,14 @@ extension SignUpViewController: UITextFieldDelegate {
                                               validType: emailValidType,
                                               validMessege: "Email is valid",
                                               wrongMessege: "Email is not valid",
+                                              string: string,
+                                              range: range)
+            
+        case passwordTextField: setTextField(textField: passwordTextField,
+                                              label: passwordValidLabel,
+                                              validType: passwordValidType,
+                                              validMessege: "Password is valid",
+                                              wrongMessege: "Password is not valid",
                                               string: string,
                                               range: range)
             
