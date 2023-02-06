@@ -11,10 +11,12 @@ extension String {
     
     enum ValidTypes {
         case name
+        case email
     }
     
     enum Regex: String {
         case name = "[a-zA-Z]{1,}"
+        case email = "[a-zA-Z0-9._]+@[a-zA-Z]+\\.[a-zA-Z]{2,}"
     }
     
     func isValid(validType: ValidTypes) -> Bool {
@@ -23,6 +25,7 @@ extension String {
         
         switch validType {
         case .name: regex = Regex.name.rawValue
+        case .email: regex = Regex.email.rawValue
         }
         
         return NSPredicate(format: format, regex).evaluate(with: self)

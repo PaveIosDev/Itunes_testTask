@@ -132,6 +132,7 @@ class SignUpViewController: UIViewController {
     private let datePicker = UIDatePicker()
     
     let nameValidType: String.ValidTypes = .name
+    let emailValidType: String.ValidTypes = .email
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -240,6 +241,14 @@ extension SignUpViewController: UITextFieldDelegate {
                                               validType: nameValidType,
                                               validMessege: "Name is valid",
                                               wrongMessege: "Only A-Z characters, min 1 character",
+                                              string: string,
+                                              range: range)
+            
+        case emailTextField: setTextField(textField: emailTextField,
+                                              label: emailValidLabel,
+                                              validType: emailValidType,
+                                              validMessege: "Email is valid",
+                                              wrongMessege: "Email is not valid",
                                               string: string,
                                               range: range)
             
