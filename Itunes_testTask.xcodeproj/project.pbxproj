@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40CBEDA29941312006F334A /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CBED929941312006F334A /* UserDefaultManager.swift */; };
+		C40CBEDD299415CE006F334A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CBEDC299415CE006F334A /* UserModel.swift */; };
 		C425981F29818C6C00AB1C1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C425981E29818C6C00AB1C1A /* AppDelegate.swift */; };
 		C425982129818C6C00AB1C1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C425982029818C6C00AB1C1A /* SceneDelegate.swift */; };
 		C425982329818C6C00AB1C1A /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C425982229818C6C00AB1C1A /* AuthViewController.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C40CBED929941312006F334A /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		C40CBEDC299415CE006F334A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		C425981B29818C6C00AB1C1A /* Itunes_testTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Itunes_testTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C425981E29818C6C00AB1C1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C425982029818C6C00AB1C1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +55,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C40CBED7299412A9006F334A /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				C425981E29818C6C00AB1C1A /* AppDelegate.swift */,
+				C425982029818C6C00AB1C1A /* SceneDelegate.swift */,
+			);
+			path = Applications;
+			sourceTree = "<group>";
+		};
+		C40CBED8299412C8006F334A /* Serveces */ = {
+			isa = PBXGroup;
+			children = (
+				C40CBED929941312006F334A /* UserDefaultManager.swift */,
+			);
+			path = Serveces;
+			sourceTree = "<group>";
+		};
+		C40CBEDB299415BA006F334A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C40CBEDC299415CE006F334A /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C425981229818C6C00AB1C1A = {
 			isa = PBXGroup;
 			children = (
@@ -70,9 +99,10 @@
 		C425981D29818C6C00AB1C1A /* Itunes_testTask */ = {
 			isa = PBXGroup;
 			children = (
-				C425982029818C6C00AB1C1A /* SceneDelegate.swift */,
-				C425981E29818C6C00AB1C1A /* AppDelegate.swift */,
+				C40CBEDB299415BA006F334A /* Models */,
+				C40CBED7299412A9006F334A /* Applications */,
 				C425983D2986D8FC00AB1C1A /* Controllers */,
+				C40CBED8299412C8006F334A /* Serveces */,
 				C425983429841D4900AB1C1A /* Extentions */,
 				C425982729818C6F00AB1C1A /* Assets.xcassets */,
 				C425982929818C6F00AB1C1A /* LaunchScreen.storyboard */,
@@ -195,7 +225,9 @@
 				C42598392984396200AB1C1A /* AlbumsViewController.swift in Sources */,
 				C425981F29818C6C00AB1C1A /* AppDelegate.swift in Sources */,
 				C46C7CBC29902AD000494CAF /* String + Extention.swift in Sources */,
+				C40CBEDD299415CE006F334A /* UserModel.swift in Sources */,
 				C42598412986E31300AB1C1A /* UserInfoViewController.swift in Sources */,
+				C40CBEDA29941312006F334A /* UserDefaultManager.swift in Sources */,
 				C42598432986E64D00AB1C1A /* DetailAlbumViewController.swift in Sources */,
 				C42598332981A3AB00AB1C1A /* SignUpViewController.swift in Sources */,
 				C425983C2984412A00AB1C1A /* AlbumsTableViewCell.swift in Sources */,

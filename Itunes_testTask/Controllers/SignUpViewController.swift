@@ -197,7 +197,23 @@ class SignUpViewController: UIViewController {
     }
     
     @objc private func signUpButtonTapped() {
-        print("signUpButtonTapped")
+
+        let firstNameText = firstNameTextField.text ?? ""
+        let secondNameText = secondNameTextField.text ?? ""
+        let emailText = emailTextField.text ?? ""
+        let passwordText = passwordTextField.text ?? ""
+        let phoneText = phoneTextField.text ?? ""
+
+        if firstNameText.isValid(validType: nameValidType)
+            && secondNameText.isValid(validType: nameValidType)
+            && emailText.isValid(validType: emailValidType)
+            && passwordText.isValid(validType: passwordValidType)
+            && phoneText.count == 18 {
+            print("+")
+        } else {
+            print("-")
+        }
+        
     }
     
     private func setTextField(textField: UITextField, label: UILabel, validType: String.ValidTypes, validMessege: String, wrongMessege: String, string: String, range: NSRange) {
