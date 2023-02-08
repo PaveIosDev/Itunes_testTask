@@ -153,6 +153,9 @@ class SignUpViewController: UIViewController {
     
     private func setupViews() {
         
+        view.addSubview(scrollView)
+        scrollView.addSubview(backgroundView)
+        
         elementsStackView = UIStackView(arrangedSubviews: [firstNameTextField,
                                                           firstNameValidLabel,
                                                           secondNameTextField,
@@ -169,10 +172,9 @@ class SignUpViewController: UIViewController {
                                         spacing: 10,
                                         distribution: .fillProportionally)
         
-        view.addSubview(scrollView)
-        scrollView.addSubview(backgroundView)
-        backgroundView.addSubview(regLabel)
+
         backgroundView.addSubview(elementsStackView)
+        backgroundView.addSubview(regLabel)
         backgroundView.addSubview(signUpButton)
     }
     
@@ -238,6 +240,15 @@ class SignUpViewController: UIViewController {
                 result.append(character)
             }
         }
+        
+        if result.count == 18 {
+            phoneValidLabel.text = "Phone is valid"
+            phoneValidLabel.textColor = #colorLiteral(red: 0.1495942388, green: 0.5955888011, blue: 0.2689788934, alpha: 1)
+        } else {
+            phoneValidLabel.text = "Phone is not valid"
+            phoneValidLabel.textColor = #colorLiteral(red: 0.9671349973, green: 0.08866649679, blue: 0.19185256, alpha: 1)
+        }
+        
         return result
     }
     
@@ -246,6 +257,7 @@ class SignUpViewController: UIViewController {
 //MARK: - UITextFieldDelegate
 
 extension SignUpViewController: UITextFieldDelegate {
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
         switch textField {
@@ -280,6 +292,10 @@ extension SignUpViewController: UITextFieldDelegate {
                                               wrongMessege: "Password is not valid",
                                               string: string,
                                               range: range)
+        case phoneTextField: phoneTextField.text = setPhoneNumberMask(textField: phoneTextField,
+                                                mask: "+X (XXX) XXX-XX-XX",
+                                                string: string,
+                                                range: range)
             
         default:
             break
@@ -354,8 +370,8 @@ extension SignUpViewController {
             elementsStackView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20),
             elementsStackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20),
             
+            regLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
             regLabel.bottomAnchor.constraint(equalTo: elementsStackView.topAnchor, constant: -30),
-            regLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             signUpButton.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
             signUpButton.topAnchor.constraint(equalTo: elementsStackView.bottomAnchor, constant: 30),
