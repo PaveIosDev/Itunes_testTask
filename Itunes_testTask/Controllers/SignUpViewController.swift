@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class SignUpViewController: UIViewController {
 
     private let scrollView: UIScrollView = {
@@ -22,7 +23,7 @@ class SignUpViewController: UIViewController {
         return view
     }()
     
-    private let regLabel: UILabel = {
+    private let loginLabel: UILabel = {
         let label = UILabel()
         label.text = "Registration"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -174,7 +175,7 @@ class SignUpViewController: UIViewController {
         
 
         backgroundView.addSubview(elementsStackView)
-        backgroundView.addSubview(regLabel)
+        backgroundView.addSubview(loginLabel)
         backgroundView.addSubview(signUpButton)
     }
     
@@ -209,28 +210,16 @@ class SignUpViewController: UIViewController {
             && emailText.isValid(validType: emailValidType)
             && passwordText.isValid(validType: passwordValidType)
             && phoneText.count == 18 {
-            print("+")
+            
+            DataBase.shared.saveUser(firstName: firstNameText,
+                                     secondName: secondNameText,
+                                     phone: phoneText,
+                                     email: emailText,
+                                     password: passwordText)
+            loginLabel.text = "registration complete"
         } else {
-            print("-")
+            loginLabel.text = "Registration"
         }
-        
-//        @objc private func signUpButtonTapped() {
-//
-//            let firstNameText = firstNameTextField.text ?? ""
-//            let secondNameText = secondNameTextField.text ?? ""
-//            let emailText = emailTextField.text ?? ""
-//            let passwordText = passwordTextField.text ?? ""
-//            let phoneText = phoneTextField.text ?? ""
-//
-//            if firstNameText.isValid(validType: nameValidType)
-//                && secondNameText.isValid(validType: nameValidType)
-//                && emailText.isValid(validType: emailValidType)
-//                && passwordText.isValid(validType: passwordValidType)
-//                && phoneText.count == 18 {
-//                print("+")
-//            } else {
-//                print("-")
-//            }
         
     }
     
@@ -404,8 +393,8 @@ extension SignUpViewController {
             elementsStackView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20),
             elementsStackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20),
             
-            regLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
-            regLabel.bottomAnchor.constraint(equalTo: elementsStackView.topAnchor, constant: -30),
+            loginLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
+            loginLabel.bottomAnchor.constraint(equalTo: elementsStackView.topAnchor, constant: -30),
             
             signUpButton.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
             signUpButton.topAnchor.constraint(equalTo: elementsStackView.bottomAnchor, constant: 30),

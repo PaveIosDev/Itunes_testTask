@@ -34,7 +34,7 @@ class DataBase {
         }
     }
     
-    private func saveUser(firstName: String, secondName: String, phone: String, email: String, password: String) {
+    func saveUser(firstName: String, secondName: String, phone: String, email: String, password: String) {
         
         let user = User(firstName: firstName, secondName: secondName, phone: phone, email: email, password: password)
         users.insert(user, at: 0)
