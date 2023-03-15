@@ -216,9 +216,10 @@ class SignUpViewController: UIViewController {
                                      phone: phoneText,
                                      email: emailText,
                                      password: passwordText)
-            loginLabel.text = "registration complete"
+            loginLabel.text = "Registration complete"
         } else {
             loginLabel.text = "Registration"
+            alertOk(title: "Error", message: "Fill in all the fields and your age must me 18+ y.o.")
         }
         
     }

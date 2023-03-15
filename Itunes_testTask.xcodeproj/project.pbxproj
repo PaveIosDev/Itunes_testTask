@@ -22,6 +22,7 @@
 		C42598412986E31300AB1C1A /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42598402986E31300AB1C1A /* UserInfoViewController.swift */; };
 		C42598432986E64D00AB1C1A /* DetailAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42598422986E64D00AB1C1A /* DetailAlbumViewController.swift */; };
 		C46C7CBC29902AD000494CAF /* String + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C7CBB29902AD000494CAF /* String + Extention.swift */; };
+		C481954D29C231E4000C763E /* AlertOk.swift in Sources */ = {isa = PBXBuildFile; fileRef = C481954C29C231E4000C763E /* AlertOk.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		C42598402986E31300AB1C1A /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		C42598422986E64D00AB1C1A /* DetailAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAlbumViewController.swift; sourceTree = "<group>"; };
 		C46C7CBB29902AD000494CAF /* String + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extention.swift"; sourceTree = "<group>"; };
+		C481954C29C231E4000C763E /* AlertOk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				C40CBEDC299415CE006F334A /* UserModel.swift */,
+				C481954C29C231E4000C763E /* AlertOk.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -99,9 +102,9 @@
 		C425981D29818C6C00AB1C1A /* Itunes_testTask */ = {
 			isa = PBXGroup;
 			children = (
-				C40CBEDB299415BA006F334A /* Models */,
 				C40CBED7299412A9006F334A /* Applications */,
 				C425983D2986D8FC00AB1C1A /* Controllers */,
+				C40CBEDB299415BA006F334A /* Models */,
 				C40CBED8299412C8006F334A /* Serveces */,
 				C425983429841D4900AB1C1A /* Extentions */,
 				C425982729818C6F00AB1C1A /* Assets.xcassets */,
@@ -226,6 +229,7 @@
 				C425981F29818C6C00AB1C1A /* AppDelegate.swift in Sources */,
 				C46C7CBC29902AD000494CAF /* String + Extention.swift in Sources */,
 				C40CBEDD299415CE006F334A /* UserModel.swift in Sources */,
+				C481954D29C231E4000C763E /* AlertOk.swift in Sources */,
 				C42598412986E31300AB1C1A /* UserInfoViewController.swift in Sources */,
 				C40CBEDA29941312006F334A /* UserDefaultManager.swift in Sources */,
 				C42598432986E64D00AB1C1A /* DetailAlbumViewController.swift in Sources */,
