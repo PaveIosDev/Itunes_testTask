@@ -64,17 +64,6 @@ class AuthViewController: UIViewController {
         return button
     }()
     
-    @objc private func signUpButtonTapped() {
-        let signUpViewController = SignUpViewController()
-        self.present(signUpViewController, animated: true)
-    }
-    
-    @objc private func signInButtonTapped() {
-        let navVC = UINavigationController(rootViewController: AlbumsViewController())
-        navVC.modalPresentationStyle = .fullScreen
-        self.present(navVC, animated: true)
-    }
-    
     private var textFieldsStackView = UIStackView()
     private var buttonsStackView = UIStackView()
     
@@ -85,6 +74,7 @@ class AuthViewController: UIViewController {
         setConstraints()
         setDelegates()
         registerKeybordNotification()
+        
     }
     
     deinit {
@@ -114,6 +104,37 @@ class AuthViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
+    
+    @objc private func signUpButtonTapped() {
+        let signUpViewController = SignUpViewController()
+        self.present(signUpViewController, animated: true)
+    }
+    
+    @objc private func signInButtonTapped() {
+//        let navVC = UINavigationController(rootViewController: AlbumsViewController())
+//        navVC.modalPresentationStyle = .fullScreen
+//        self.present(navVC, animated: true)
+        
+        
+        
+        
+        
+    }
+    
+    private func findUserDataBase(mail: String) -> User? {
+        let dataBase = DataBase.shared.users
+        print(dataBase)
+        
+        for user in dataBase {
+            if user.email == mail {
+                return user
+            }
+        }
+        return nil
+    }
+    
+    
+    
 }
 
 //MARK: - UITextFieldDelegate
