@@ -54,7 +54,7 @@ class UserInfoViewController: UIViewController {
         setConstraints()
         setModel()
     }
-//https://itunes.apple.com/search?term=Sheffield&entity=album&attribute=albumTerm
+
     private func setupViews() {
         title = "Active User"
         view.backgroundColor = .white

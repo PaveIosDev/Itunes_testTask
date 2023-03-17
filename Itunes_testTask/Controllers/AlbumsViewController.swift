@@ -18,6 +18,9 @@ class AlbumsViewController: UIViewController {
     
     private let searchController = UISearchController(searchResultsController: nil)
     
+    var albums = [Album]()
+    
+    
     private let idTableViewCell = "idTableViewCell"
     
     override func viewDidLoad() {
@@ -29,6 +32,7 @@ class AlbumsViewController: UIViewController {
         
         setNavigationBar()
         setupSearchController()
+        fetchAlbums(albumName: "Sheffield")
     }
     
     private func setupViews() {
@@ -60,6 +64,24 @@ class AlbumsViewController: UIViewController {
         let userInfoViewController = UserInfoViewController()
         navigationController?.pushViewController(userInfoViewController, animated: true)
     }
+    
+    private func fetchAlbums(albumName: String) {
+        
+        let urlString = "https://itunes.apple.com/search?term=Sheffield&entity=album&attribute=albumTerm"
+        
+        NetworkDataFetch.shared.fetchAlbum(urlString: urlString) { [weak self] albumModel, error in
+            if error == nil {
+                
+                guard let albumModel = albumModel else { return }
+                self?.albums = albumModel.results
+                print(self?.albums)
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
+
+    }
+    
 }
 
 
