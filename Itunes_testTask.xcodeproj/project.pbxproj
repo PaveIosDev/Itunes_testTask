@@ -23,6 +23,7 @@
 		C42598432986E64D00AB1C1A /* DetailAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42598422986E64D00AB1C1A /* DetailAlbumViewController.swift */; };
 		C46C7CBC29902AD000494CAF /* String + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C7CBB29902AD000494CAF /* String + Extention.swift */; };
 		C481954D29C231E4000C763E /* AlertOk.swift in Sources */ = {isa = PBXBuildFile; fileRef = C481954C29C231E4000C763E /* AlertOk.swift */; };
+		C4ADC98A29C4CFEA00111477 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ADC98929C4CFEA00111477 /* AlbumModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		C42598422986E64D00AB1C1A /* DetailAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAlbumViewController.swift; sourceTree = "<group>"; };
 		C46C7CBB29902AD000494CAF /* String + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extention.swift"; sourceTree = "<group>"; };
 		C481954C29C231E4000C763E /* AlertOk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOk.swift; sourceTree = "<group>"; };
+		C4ADC98929C4CFEA00111477 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				C40CBEDC299415CE006F334A /* UserModel.swift */,
 				C481954C29C231E4000C763E /* AlertOk.swift */,
+				C4ADC98929C4CFEA00111477 /* AlbumModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C425982329818C6C00AB1C1A /* AuthViewController.swift in Sources */,
+				C4ADC98A29C4CFEA00111477 /* AlbumModel.swift in Sources */,
 				C425983729841D9200AB1C1A /* UIStackView + Extentions.swift in Sources */,
 				C42598392984396200AB1C1A /* AlbumsViewController.swift in Sources */,
 				C425981F29818C6C00AB1C1A /* AppDelegate.swift in Sources */,

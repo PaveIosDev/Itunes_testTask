@@ -52,8 +52,9 @@ class UserInfoViewController: UIViewController {
 
         setupViews()
         setConstraints()
+        setModel()
     }
-
+//https://itunes.apple.com/search?term=Sheffield&entity=album&attribute=albumTerm
     private func setupViews() {
         title = "Active User"
         view.backgroundColor = .white
@@ -65,6 +66,16 @@ class UserInfoViewController: UIViewController {
                                                   paswordLabel],
                                 axis: .vertical, spacing: 10, distribution: .fillProportionally)
         view.addSubview(stackView)
+    }
+    
+    private func setModel() {
+        guard let activeUser = DataBase.shared.activeUser else {return }
+        
+        firstNamelabel.text = activeUser.firstName
+        secondNamelabel.text = activeUser.secondName
+        phoneLabel.text = activeUser.phone
+        emailLabel.text = activeUser.email
+        paswordLabel.text = activeUser.password
     }
 }
 
