@@ -25,6 +25,7 @@
 		C481954D29C231E4000C763E /* AlertOk.swift in Sources */ = {isa = PBXBuildFile; fileRef = C481954C29C231E4000C763E /* AlertOk.swift */; };
 		C4ADC98A29C4CFEA00111477 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ADC98929C4CFEA00111477 /* AlbumModel.swift */; };
 		C4ADC98D29C4D17900111477 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ADC98C29C4D17900111477 /* NetworkRequest.swift */; };
+		C4ADC98F29C4DC2900111477 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ADC98E29C4DC2900111477 /* NetworkDataFetch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		C481954C29C231E4000C763E /* AlertOk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOk.swift; sourceTree = "<group>"; };
 		C4ADC98929C4CFEA00111477 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		C4ADC98C29C4D17900111477 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		C4ADC98E29C4DC2900111477 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				C4ADC98C29C4D17900111477 /* NetworkRequest.swift */,
+				C4ADC98E29C4DC2900111477 /* NetworkDataFetch.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				C42598432986E64D00AB1C1A /* DetailAlbumViewController.swift in Sources */,
 				C42598332981A3AB00AB1C1A /* SignUpViewController.swift in Sources */,
 				C425983C2984412A00AB1C1A /* AlbumsTableViewCell.swift in Sources */,
+				C4ADC98F29C4DC2900111477 /* NetworkDataFetch.swift in Sources */,
 				C425982129818C6C00AB1C1A /* SceneDelegate.swift in Sources */,
 				C425983F2986DFA000AB1C1A /* UIViewController + Extention.swift in Sources */,
 			);
