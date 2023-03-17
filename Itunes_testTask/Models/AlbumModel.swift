@@ -17,7 +17,7 @@ struct AlbumModel: Decodable {
 struct Album: Decodable {
     let artistName: String
     let collectionName: String
-    let artworkUrl60: String
+    let artworkUrl60: String?
     let trackCount: Int
     let releaseDate: String
 }

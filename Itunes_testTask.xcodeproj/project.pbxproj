@@ -24,6 +24,7 @@
 		C46C7CBC29902AD000494CAF /* String + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C7CBB29902AD000494CAF /* String + Extention.swift */; };
 		C481954D29C231E4000C763E /* AlertOk.swift in Sources */ = {isa = PBXBuildFile; fileRef = C481954C29C231E4000C763E /* AlertOk.swift */; };
 		C4ADC98A29C4CFEA00111477 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ADC98929C4CFEA00111477 /* AlbumModel.swift */; };
+		C4ADC98D29C4D17900111477 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ADC98C29C4D17900111477 /* NetworkRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		C46C7CBB29902AD000494CAF /* String + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extention.swift"; sourceTree = "<group>"; };
 		C481954C29C231E4000C763E /* AlertOk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOk.swift; sourceTree = "<group>"; };
 		C4ADC98929C4CFEA00111477 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		C4ADC98C29C4D17900111477 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				C40CBEDB299415BA006F334A /* Models */,
 				C40CBED8299412C8006F334A /* Serveces */,
 				C425983429841D4900AB1C1A /* Extentions */,
+				C4ADC98B29C4D14700111477 /* Network */,
 				C425982729818C6F00AB1C1A /* Assets.xcassets */,
 				C425982929818C6F00AB1C1A /* LaunchScreen.storyboard */,
 				C425982C29818C6F00AB1C1A /* Info.plist */,
@@ -154,6 +157,14 @@
 				C42598402986E31300AB1C1A /* UserInfoViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C4ADC98B29C4D14700111477 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C4ADC98C29C4D17900111477 /* NetworkRequest.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +239,7 @@
 			files = (
 				C425982329818C6C00AB1C1A /* AuthViewController.swift in Sources */,
 				C4ADC98A29C4CFEA00111477 /* AlbumModel.swift in Sources */,
+				C4ADC98D29C4D17900111477 /* NetworkRequest.swift in Sources */,
 				C425983729841D9200AB1C1A /* UIStackView + Extentions.swift in Sources */,
 				C42598392984396200AB1C1A /* AlbumsViewController.swift in Sources */,
 				C425981F29818C6C00AB1C1A /* AppDelegate.swift in Sources */,
