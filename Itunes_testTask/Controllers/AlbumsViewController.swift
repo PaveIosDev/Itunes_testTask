@@ -66,21 +66,28 @@ class AlbumsViewController: UIViewController {
     
     private func fetchAlbums(albumName: String) {
         
-        let urlString = "https://itunes.apple.com/search?term=Sheffield&entity=album&attribute=albumTerm"
+        let urlString = "https://itunes.apple.com/search?term=\(albumName)&entity=album&attribute=albumTerm"
         
         NetworkDataFetch.shared.fetchAlbum(urlString: urlString) { [weak self] albumModel, error in
+            
             if error == nil {
                 
                 guard let albumModel = albumModel else { return }
-                self?.albums = albumModel.results
-                print(self?.albums)
+                
+                if albumModel.results != [] {
+                    let sortedAlbums = albumModel.results.sorted { firstItem, secondItem in
+                        return firstItem.collectionName.compare(secondItem.collectionName) == ComparisonResult.orderedAscending
+                    }
+                    self?.albums = sortedAlbums
+                    self?.tableView.reloadData()
+                } else {
+                    self?.alertOk(title: "Error", message: "Album not found. Add some words")
+                }
             } else {
                 print(error!.localizedDescription)
             }
         }
-
     }
-    
 }
 
 
@@ -96,6 +103,7 @@ extension AlbumsViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         let album = albums[indexPath.row]
+        cell.configureAlbumCell(album: album)
         return cell
     }
 }
