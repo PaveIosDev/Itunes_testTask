@@ -19,7 +19,7 @@ class AlbumsViewController: UIViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     
     var albums = [Album]()
-    
+    var timer: Timer?
     
     private let idTableViewCell = "idTableViewCell"
     
@@ -32,7 +32,6 @@ class AlbumsViewController: UIViewController {
         
         setNavigationBar()
         setupSearchController()
-        fetchAlbums(albumName: "Sheffield")
     }
     
     private func setupViews() {
@@ -89,13 +88,14 @@ class AlbumsViewController: UIViewController {
 
 extension AlbumsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        albums.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          guard let cell = tableView.dequeueReusableCell(withIdentifier: idTableViewCell, for: indexPath) as? AlbumsTableViewCell else {
             return UITableViewCell()
         }
+        let album = albums[indexPath.row]
         return cell
     }
 }
@@ -119,7 +119,12 @@ extension AlbumsViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        print(searchText)
+        if searchText != "" {
+            timer?.invalidate()
+            timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
+                self?.fetchAlbums(albumName: searchText)
+            })
+        }
     }
 }
 
