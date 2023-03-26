@@ -91,7 +91,6 @@ class AlbumsTableViewCell: UITableViewCell {
                     print("No album logo" + error.localizedDescription)
                 }
             }
-
         } else {
             albumLogo.image = nil
         }

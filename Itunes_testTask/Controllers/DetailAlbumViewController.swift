@@ -69,6 +69,7 @@ class DetailAlbumViewController: UIViewController {
         setupViews()
         setConstraints()
         setDelegates()
+        setModel()
     }
     
     private func setupViews() {
@@ -106,7 +107,7 @@ class DetailAlbumViewController: UIViewController {
     private func setDateFormat(date: String) -> String {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'HH':'mm':'ss':'ssZZZ"
+        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"
         guard let backendDate = dateFormatter.date(from: date) else { return "" }
         
         let formatDate = DateFormatter()
@@ -114,6 +115,22 @@ class DetailAlbumViewController: UIViewController {
         let date = formatDate.string(from: backendDate)
         return date
     }
+    
+    private func setImage(urlString: String?, imageImage: UIImageView) {
+        
+        NetworkRequest.shared.requestData(urlString: urlString) { [weak self] result in
+            switch result {
+                
+            case .success(let data):
+                let image = UIImage(data: data)
+                self?.albumLogo.image = image
+            case .failure(let error):
+                self?.albumLogo.image = nil
+                print("No album logo" + error.localizedDescription)
+            }
+        }
+    }
+    
 }
 
 //MARK: - setConstraints
