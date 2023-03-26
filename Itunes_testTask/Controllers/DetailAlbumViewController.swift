@@ -54,7 +54,7 @@ class DetailAlbumViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         collectionView.bounces = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(SongCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
@@ -168,10 +168,9 @@ extension DetailAlbumViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-//        as! SongsC
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SongCollectionViewCell
         let song = songs[indexPath.row].trackName
-//        cell.nameSongL
+        cell.nameSongLabel.text = song
         return cell
     }
     
@@ -181,7 +180,6 @@ extension DetailAlbumViewController: UICollectionViewDelegate, UICollectionViewD
             height: 20
         )
     }
-    
 }
 
 //MARK: - setConstraints

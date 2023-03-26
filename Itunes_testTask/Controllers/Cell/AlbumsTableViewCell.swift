@@ -14,7 +14,6 @@ class AlbumsTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.backgroundColor = .red
         imageView.clipsToBounds = true
-//        imageView.layer.cornerRadius = 32
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -64,7 +63,6 @@ class AlbumsTableViewCell: UITableViewCell {
     
     private func setupViews() {
         backgroundColor = .clear
-//        selectionStyle = .none
         
         addSubview(albumLogo)
         addSubview(albumNameLabel)
@@ -94,13 +92,10 @@ class AlbumsTableViewCell: UITableViewCell {
         } else {
             albumLogo.image = nil
         }
-        
-        
         albumNameLabel.text = album.collectionName
         artistNameLabel.text = album.artistName
         trackCountLabel.text = "\(album.trackCount) tracks"
     }
-    
 }
 
 //MARK: - setConstraints

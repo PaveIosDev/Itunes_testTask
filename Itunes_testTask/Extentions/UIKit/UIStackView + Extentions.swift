@@ -16,5 +16,4 @@ extension UIStackView {
         self.distribution = distribution
         self.translatesAutoresizingMaskIntoConstraints = false
     }
-    
 }

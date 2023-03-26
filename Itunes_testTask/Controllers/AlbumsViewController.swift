@@ -79,7 +79,7 @@ class AlbumsViewController: UIViewController {
                         return firstItem.collectionName.compare(secondItem.collectionName) == ComparisonResult.orderedAscending
                     }
                     self?.albums = sortedAlbums
-                    self?.tableView.reloadData()
+                        self?.tableView.reloadData()
                 } else {
                     self?.alertOk(title: "Error", message: "Album not found. Add some words")
                 }

@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class SignUpViewController: UIViewController {
 
     private let scrollView: UIScrollView = {
@@ -161,7 +160,6 @@ class SignUpViewController: UIViewController {
                                                           firstNameValidLabel,
                                                           secondNameTextField,
                                                           secondNameValidLabel,
-//                                                          datePicker,
                                                           ageValidLabel,
                                                           phoneTextField,
                                                           phoneValidLabel,
@@ -173,7 +171,6 @@ class SignUpViewController: UIViewController {
                                         spacing: 10,
                                         distribution: .fillProportionally)
         
-
         backgroundView.addSubview(elementsStackView)
         backgroundView.addSubview(loginLabel)
         backgroundView.addSubview(signUpButton)
@@ -221,7 +218,6 @@ class SignUpViewController: UIViewController {
             loginLabel.text = "Registration"
             alertOk(title: "Error", message: "Fill in all the fields and your age must me 18+ y.o.")
         }
-        
     }
     
     private func setTextField(textField: UITextField, label: UILabel, validType: String.ValidTypes, validMessege: String, wrongMessege: String, string: String, range: NSRange) {
@@ -272,10 +268,8 @@ class SignUpViewController: UIViewController {
             phoneValidLabel.text = "Phone is not valid"
             phoneValidLabel.textColor = #colorLiteral(red: 0.9671349973, green: 0.08866649679, blue: 0.19185256, alpha: 1)
         }
-        
         return result
     }
-    
 }
 
 //MARK: - UITextFieldDelegate
@@ -326,7 +320,6 @@ extension SignUpViewController: UITextFieldDelegate {
         }
         return false
     }
-    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         firstNameTextField.resignFirstResponder()

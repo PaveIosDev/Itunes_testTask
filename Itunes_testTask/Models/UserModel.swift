@@ -14,5 +14,4 @@ struct User: Codable {
     let phone: String
     let email: String
     let password: String
-//    let age: Date
 }

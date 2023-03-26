@@ -10,8 +10,6 @@ import Foundation
 struct AlbumModel: Decodable, Equatable {
     
     let results: [Album]
-    
-    
 }
 
 struct Album: Decodable, Equatable {
@@ -21,5 +19,4 @@ struct Album: Decodable, Equatable {
     let trackCount: Int
     let releaseDate: String
     let collectionId: Int
-
 }

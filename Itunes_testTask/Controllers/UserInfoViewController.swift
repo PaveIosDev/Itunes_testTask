@@ -46,7 +46,6 @@ class UserInfoViewController: UIViewController {
     
     private var stackView = UIStackView()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

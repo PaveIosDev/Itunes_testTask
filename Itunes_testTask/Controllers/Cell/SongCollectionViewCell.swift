@@ -26,6 +26,8 @@ class SongCollectionViewCell: UICollectionViewCell {
     }
     
     func setConstraints() {
+        
+        self.addSubview(nameSongLabel)
         NSLayoutConstraint.activate([
             nameSongLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             nameSongLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
