@@ -20,4 +20,6 @@ struct Album: Decodable, Equatable {
     let artworkUrl60: String?
     let trackCount: Int
     let releaseDate: String
+    let collectionId: Int
+
 }

@@ -23,6 +23,8 @@
 		C42598432986E64D00AB1C1A /* DetailAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42598422986E64D00AB1C1A /* DetailAlbumViewController.swift */; };
 		C46C7CBC29902AD000494CAF /* String + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C7CBB29902AD000494CAF /* String + Extention.swift */; };
 		C481954D29C231E4000C763E /* AlertOk.swift in Sources */ = {isa = PBXBuildFile; fileRef = C481954C29C231E4000C763E /* AlertOk.swift */; };
+		C4960CB529D0B66C0039561C /* SongsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4960CB429D0B66C0039561C /* SongsModel.swift */; };
+		C4960CB929D0BE7B0039561C /* SongCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4960CB829D0BE7B0039561C /* SongCollectionViewCell.swift */; };
 		C4ADC98A29C4CFEA00111477 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ADC98929C4CFEA00111477 /* AlbumModel.swift */; };
 		C4ADC98D29C4D17900111477 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ADC98C29C4D17900111477 /* NetworkRequest.swift */; };
 		C4ADC98F29C4DC2900111477 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ADC98E29C4DC2900111477 /* NetworkDataFetch.swift */; };
@@ -47,6 +49,8 @@
 		C42598422986E64D00AB1C1A /* DetailAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAlbumViewController.swift; sourceTree = "<group>"; };
 		C46C7CBB29902AD000494CAF /* String + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extention.swift"; sourceTree = "<group>"; };
 		C481954C29C231E4000C763E /* AlertOk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOk.swift; sourceTree = "<group>"; };
+		C4960CB429D0B66C0039561C /* SongsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsModel.swift; sourceTree = "<group>"; };
+		C4960CB829D0BE7B0039561C /* SongCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCollectionViewCell.swift; sourceTree = "<group>"; };
 		C4ADC98929C4CFEA00111477 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		C4ADC98C29C4D17900111477 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		C4ADC98E29C4DC2900111477 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 				C40CBEDC299415CE006F334A /* UserModel.swift */,
 				C481954C29C231E4000C763E /* AlertOk.swift */,
 				C4ADC98929C4CFEA00111477 /* AlbumModel.swift */,
+				C4960CB429D0B66C0039561C /* SongsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				C425983B2984412A00AB1C1A /* AlbumsTableViewCell.swift */,
+				C4960CB829D0BE7B0039561C /* SongCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -242,6 +248,7 @@
 			files = (
 				C425982329818C6C00AB1C1A /* AuthViewController.swift in Sources */,
 				C4ADC98A29C4CFEA00111477 /* AlbumModel.swift in Sources */,
+				C4960CB929D0BE7B0039561C /* SongCollectionViewCell.swift in Sources */,
 				C4ADC98D29C4D17900111477 /* NetworkRequest.swift in Sources */,
 				C425983729841D9200AB1C1A /* UIStackView + Extentions.swift in Sources */,
 				C42598392984396200AB1C1A /* AlbumsViewController.swift in Sources */,
@@ -254,6 +261,7 @@
 				C42598432986E64D00AB1C1A /* DetailAlbumViewController.swift in Sources */,
 				C42598332981A3AB00AB1C1A /* SignUpViewController.swift in Sources */,
 				C425983C2984412A00AB1C1A /* AlbumsTableViewCell.swift in Sources */,
+				C4960CB529D0B66C0039561C /* SongsModel.swift in Sources */,
 				C4ADC98F29C4DC2900111477 /* NetworkDataFetch.swift in Sources */,
 				C425982129818C6C00AB1C1A /* SceneDelegate.swift in Sources */,
 				C425983F2986DFA000AB1C1A /* UIViewController + Extention.swift in Sources */,
