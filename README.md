@@ -1,6 +1,19 @@
 # Itunes_testTask
 
+Стек используемых технологий:
 
+- TableView (+ создание customTableViewCell)
+- CollectionView (+ создание customCollectionViewCell)
+- ScrollView
+- AlertController (+ создание custom alert)
+- UIKit (label, button, UIView, UIImageView, textField, stackView)
+- Date (преобразование)
+- Переходы между экранами и передача данных между ними
+- JSON
+- User Defaults
+- TabBarController (+ NavigatonBar), searchBar
+- NetworkRequest
+- вертка кодом, без строриборда
 
 Приложение включает в себя: 
 1. Экран регистрации пользователя с валидацией полей.
